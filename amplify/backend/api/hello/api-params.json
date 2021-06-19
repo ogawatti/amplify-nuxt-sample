@@ -1,0 +1,38 @@
+{
+  "paths": [
+    {
+      "name": "/world",
+      "lambdaFunction": "helloworld",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/GET"
+        ]
+      },
+      "policyResourceName": "/world"
+    }
+  ],
+  "resourceName": "hello",
+  "apiName": "hello",
+  "functionArns": [
+    {
+      "lambdaFunction": "helloworld"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-amplifynuxtsample-dev-151144-authRole",
+    "unAuthRoleName": "amplify-amplifynuxtsample-dev-151144-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "helloworld",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

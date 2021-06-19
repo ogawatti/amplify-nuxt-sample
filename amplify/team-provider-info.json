@@ -20,6 +20,12 @@
       },
       "auth": {
         "amplifynuxtsample21ebb45d": {}
+      },
+      "function": {
+        "helloworld": {
+          "deploymentBucketName": "amplify-amplifynuxtsample-dev-151144-deployment",
+          "s3Key": "amplify-builds/helloworld-62313159537973522b47-build.zip"
+        }
       }
     }
   }
