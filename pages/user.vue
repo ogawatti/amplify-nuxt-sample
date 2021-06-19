@@ -1,15 +1,8 @@
 <template>
   <div class="user">
-    {{ name }}
+    <amplify-authenticator>
+      {{ 'authenticated' }}
+      <amplify-sign-out />
+    </amplify-authenticator>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      name: 'undefined'
-    }
-  }
-}
-</script>
