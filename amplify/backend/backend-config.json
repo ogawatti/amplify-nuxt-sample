@@ -5,5 +5,13 @@
       "providerPlugin": "awscloudformation",
       "type": "manual"
     }
+  },
+  "auth": {
+    "amplifynuxtsample21ebb45d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }
