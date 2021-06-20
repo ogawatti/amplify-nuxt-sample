@@ -176,16 +176,23 @@ app.post(path, function(req, res) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
 
+  // TODO : support duplicated shorteining url
+  const generateShortening = () => { return Math.random().toString(36).slice(-10) }
+  let shortening = generateShortening()
+
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: {
+      ...req.body,
+      shortening
+    }
   }
   dynamodb.put(putItemParams, (err, data) => {
     if(err) {
       res.statusCode = 500;
       res.json({error: err, url: req.url, body: req.body});
     } else{
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({ shortening })
     }
   });
 });

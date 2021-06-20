@@ -28,7 +28,7 @@
         },
         "PostURLShortening": {
           "deploymentBucketName": "amplify-amplifynuxtsample-dev-151144-deployment",
-          "s3Key": "amplify-builds/PostURLShortening-5856345348377362745a-build.zip"
+          "s3Key": "amplify-builds/PostURLShortening-5338796a614547654436-build.zip"
         }
       }
     }
