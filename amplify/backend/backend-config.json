@@ -28,6 +28,40 @@
           ]
         }
       ]
+    },
+    "PostURLShortening": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "URL",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        },
+        {
+          "category": "auth",
+          "resourceName": "amplifynuxtsample21ebb45d",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "URL",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "api": {
@@ -44,6 +78,26 @@
           ]
         }
       ]
+    },
+    "URLShortening": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "PostURLShortening",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
+  },
+  "storage": {
+    "URL": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

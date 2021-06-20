@@ -1,0 +1,38 @@
+{
+  "paths": [
+    {
+      "name": "/url-shortening",
+      "lambdaFunction": "PostURLShortening",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST"
+        ]
+      },
+      "policyResourceName": "/url-shortening"
+    }
+  ],
+  "resourceName": "URLShortening",
+  "apiName": "URLShortening",
+  "functionArns": [
+    {
+      "lambdaFunction": "PostURLShortening"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-amplifynuxtsample-dev-151144-authRole",
+    "unAuthRoleName": "amplify-amplifynuxtsample-dev-151144-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "PostURLShortening",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

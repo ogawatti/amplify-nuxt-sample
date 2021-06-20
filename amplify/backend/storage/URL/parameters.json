@@ -1,0 +1,5 @@
+{
+    "tableName": "URL",
+    "partitionKeyName": "shortening",
+    "partitionKeyType": "S"
+}

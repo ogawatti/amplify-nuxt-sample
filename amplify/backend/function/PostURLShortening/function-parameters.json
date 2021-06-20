@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifynuxtsample21ebb45d": [
+        "read"
+      ]
+    },
+    "storage": {
+      "URL": [
+        "create",
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
