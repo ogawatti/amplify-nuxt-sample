@@ -98,6 +98,10 @@
     "URL": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "videos": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
