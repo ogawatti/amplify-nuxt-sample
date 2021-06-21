@@ -18,6 +18,9 @@
         {{ presignedUrl }}
       </div>
 
+      <br>
+      <button @click="onClickS3Put()">Upload Image</button>
+
       <amplify-sign-out />
     </amplify-authenticator>
   </div>
@@ -35,11 +38,18 @@ export default {
     }
   },
   computed: {
+    level () {
+      return 'protected'
+    },
     objectKey () {
-      return 'test.mp4'
+      return 'test/test.jpg'
     },
     expires () {
-      return 604800  // 7 Days
+      // return 604800  // 7 Days
+      return 120
+    },
+    filePath () {
+      return require('@/assets/img/test.jpg')
     }
   },
   methods: {
@@ -57,7 +67,11 @@ export default {
       this.urlShortening = shortening
     },
     async onClickS3PresignUrl () {
-      this.presignedUrl = await Storage.get(this.objectKey, { expires: this.expires })
+      this.presignedUrl = await Storage.get(this.objectKey, { expires: this.expires, level: this.level })
+    },
+    async onClickS3Put () {
+      const result = await Storage.put(this.objectKey, this.filePath, { level: this.level })
+      console.log(result)
     }
   }
 }
