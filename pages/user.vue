@@ -45,7 +45,6 @@ export default {
       return 'test/test.jpg'
     },
     expires () {
-      // return 604800  // 7 Days
       return 120
     },
     filePath () {
@@ -60,7 +59,7 @@ export default {
       console.log('URL Shortening')
       const init = {
         body: {
-          original: 'https://ogawatti.net/video/?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=xxxxxxxxxx&X-Amz-Date=xxxxxxxxxx&X-Amz-Expires=xxxxxxxxxx&X-Amz-SignedHeaders=host&X-Amz-Signature=xxxxxxxxxx'
+          original: this.$config.originalUrl
         }
       }
       const { shortening }  = await API.post('URLShortening', '/url-shortening', init)

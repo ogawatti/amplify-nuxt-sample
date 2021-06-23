@@ -27,6 +27,10 @@ export default {
     { src: '~/plugins/amplify.js', ssr: false }
   ],
 
+  publicRuntimeConfig: {
+    originalUrl: process.env.ORIGINAL_URL || 'https://example.com/'
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
